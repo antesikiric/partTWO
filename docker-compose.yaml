@@ -1,0 +1,14 @@
+version: "3.8"
+services:
+  binance-trades:
+    build: .
+    container_name: binance-trades-container
+    environment:
+      - SYMBOL=BTCUSDT
+      - LIMIT=10
+    networks:
+      - binance_network
+
+networks:
+  binance_network:
+    driver: bridge
